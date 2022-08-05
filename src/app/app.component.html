@@ -1,1 +1,10 @@
-<h1>noticias</h1>
+<app-navbar [titulo]="'Buscador de noticias'"></app-navbar>
+<div class="container">
+  <!-- recibiendo datos del del hijo al padre -->
+  <app-formulario
+    (parametrosSeleccionados)="buscarNoticias($event)"
+  ></app-formulario>
+  <!-- enviando datos del padre al hijo -->
+  <app-spinner *ngIf="loading"></app-spinner>
+  <app-listado-noticias [listNoticias]="listNoticias"></app-listado-noticias>
+</div>
